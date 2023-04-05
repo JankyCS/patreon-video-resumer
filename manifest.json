@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Patreon Video Resume",
+  "version": "1.0",
+  "description": "Automatically resume Patreon videos where you left off",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.patreon.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  
+  "permissions": [
+    "storage",
+    "scripting"
+    ],
+"action": {
+    "default_title": "Current Episode"
+    },
+    "background": {
+        "service_worker": 
+          "background.js"
+        
+      }
+}
